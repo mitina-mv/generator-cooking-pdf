@@ -1,0 +1,20 @@
+{
+    "name": "maria/lr4",
+    "autoload": {
+        "psr-4": {
+            "Maria\\Lr4\\": "src/"
+        },
+        "files": ["constants.php", "functions.php"]
+    },
+    "authors": [
+        {
+            "name": "Maria",
+            "email": "mit.maria2019@yandex.ru"
+        }
+    ],
+    "require": {
+        "dejurin/php-google-translate-for-free": "^1.0",
+        "php-amqplib/php-amqplib": "^3.6",
+        "mpdf/mpdf": "^8.2"
+    }
+}
