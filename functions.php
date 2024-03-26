@@ -35,7 +35,6 @@ function getRecipes($recipes)
         'title' => $tr->translate($source, $target, $recipes['title'], $attempts),
         'image' => $recipes['image'],
         'recipes' => $tr->translate($source, $target, $summary, $attempts),
-        'wine' => $recipes['winePairing']['pairingText'] ? $tr->translate($source, $target, $recipes['winePairing']['pairingText'], $attempts) : 'Это сильно здоровый рецепт :)',
         'nutrition' => $nutrients,
         'ingredients' => $ingredients,
         'minutes' => $recipes['readyInMinutes'],
@@ -50,7 +49,7 @@ function getHtml($recipes)
 
     $html .= "<img src='{$recipes['image']}' /><br />";
     $html .= "<h1>{$recipes['title']}</h1>";
-    $html .= "<p style='color: red;'>Время приготовления: {$recipes['minutes']} мин.</p>";
+    $html .= "<p style='color: #fff; background-color: red; padding: 10px 16px;'>Время приготовления: {$recipes['minutes']} мин.</p>";
 
     if($recipes['taste'])
     {
@@ -101,26 +100,5 @@ function getHtml($recipes)
         $html .= "</table>";
     }
 
-    $html .= "<h3>Подходящие вина:</h3>";
-    $html .= "<div>{$recipes['wine']}</div>";
-
     return $html;
 }
-
-// Функция для загрузки переменных окружения из файла .env
-/* function loadEnv($path) {
-    if (!file_exists($path)) {
-        throw new Exception('.env file not found');
-    }
-
-    $env = file_get_contents($path);
-    $lines = explode("\n", $env);
-
-    foreach ($lines as $line) {
-        $line = trim($line);
-        if (!empty($line) && strpos($line, '=') !== false) {
-            list($name, $value) = explode('=', $line, 2);
-            putenv("$name=$value");
-        }
-    }
-} */
