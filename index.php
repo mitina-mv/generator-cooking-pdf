@@ -27,8 +27,8 @@ $dotenv->load(".env.local");
     $apiKey = $_ENV['API_KEY'];
 
     // $response = file_get_contents("https://api.spoonacular.com/recipes/random?include-tags={$country},{$type}&apiKey={$apiKey}&number={$count}");
-    $response = file_get_contents('random.json');
-    $response = json_decode($response, true)['recipes'];
+    // $response = file_get_contents('random.json');
+    // $response = json_decode($response, true)['recipes'];
 
     // получение рандомного рецепта
     // https://api.spoonacular.com/recipes/random?number={$count}&include-tags=vegetarian,dessert&exclude-tags=quinoa
@@ -100,9 +100,38 @@ $dotenv->load(".env.local");
     ftp_set_option($conn_id, FTP_USEPASVADDRESS, false);
 
     if (!$login_result) exit("Ошибка подключения");
-    ftp_chdir($conn_id, "lr4");
+
+        // Полный путь к файлу, который вы хотите загрузить
+        $file_to_upload = "jsons/random.json";
+
+        // Попытка асинхронной загрузки файла на FTP сервер
+        $put_result = ftp_nb_put($conn_id, "random.json", $file_to_upload, FTP_BINARY);
     
-    ftp_mkdir($conn_id, "tyk");
+        while ($put_result == FTP_MOREDATA) {
+            // Продолжаем загрузку
+            $put_result = ftp_nb_continue($conn_id);
+        }
+    
+        if ($put_result == FTP_FINISHED) {
+            echo "Файл успешно загружен";
+        } elseif ($put_result == FTP_FAILED) {
+            echo "Ошибка при загрузке файла на FTP сервер";
+        }
+
+    // ftp_chdir($conn_id, "lr4");
+
+    // $text = 'Содержимое файла file.txt';
+    // $file = fopen('php://temp', 'r+');
+    // fwrite($file, $text);
+    // rewind($file);
+    
+    // if (ftp_fput($conn_id, 'file.txt', $file, FTP_ASCII)) {
+    //     echo 'Файл создан';
+    // } else {
+    //     echo 'Не удалось создать файл';
+    // }
+    
+/*     ftp_mkdir($conn_id, "tyk");
     // Полный путь к файлу, который вы хотите загрузить
     $file_to_upload = __DIR__ . "/doc.xml";
 
@@ -125,7 +154,7 @@ $dotenv->load(".env.local");
     print_r($contents);
     
     // Закрытие соединения
-    ftp_close($conn_id);
+    ftp_close($conn_id); */
     
     /* 
     telegram_id

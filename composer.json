@@ -17,6 +17,8 @@
         "php-amqplib/php-amqplib": "^3.6",
         "mpdf/mpdf": "^8.2",
         "vlucas/phpdotenv": "^5.6",
-        "symfony/dotenv": "^6.4"
+        "symfony/dotenv": "^6.4",
+        "league/flysystem": "^3.26",
+        "nicolab/php-ftp-client": "^2.0"
     }
 }
