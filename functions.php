@@ -106,3 +106,21 @@ function getHtml($recipes)
 
     return $html;
 }
+
+// Функция для загрузки переменных окружения из файла .env
+/* function loadEnv($path) {
+    if (!file_exists($path)) {
+        throw new Exception('.env file not found');
+    }
+
+    $env = file_get_contents($path);
+    $lines = explode("\n", $env);
+
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if (!empty($line) && strpos($line, '=') !== false) {
+            list($name, $value) = explode('=', $line, 2);
+            putenv("$name=$value");
+        }
+    }
+} */

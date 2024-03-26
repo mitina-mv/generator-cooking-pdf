@@ -1,0 +1,787 @@
+{
+    "recipes": [
+      {
+        "vegetarian": true,
+        "vegan": true,
+        "glutenFree": true,
+        "dairyFree": true,
+        "veryHealthy": false,
+        "cheap": false,
+        "veryPopular": false,
+        "sustainable": false,
+        "lowFodmap": false,
+        "weightWatcherSmartPoints": 1,
+        "gaps": "no",
+        "preparationMinutes": -1,
+        "cookingMinutes": -1,
+        "aggregateLikes": 4,
+        "healthScore": 5,
+        "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+        "license": "CC BY 3.0",
+        "sourceName": "Foodista",
+        "pricePerServing": 9.8,
+        "extendedIngredients": [
+          {
+            "id": 16058,
+            "aisle": "Canned and Jarred",
+            "image": "chickpeas.png",
+            "consistency": "SOLID",
+            "name": "chickpeas",
+            "nameClean": "canned chickpeas",
+            "original": "1 can (19 oz) chickpeas, drained",
+            "originalName": "can chickpeas, drained",
+            "amount": 19.0,
+            "unit": "oz",
+            "meta": [
+              "drained",
+              "canned"
+            ],
+            "measures": {
+              "us": {
+                "amount": 19.0,
+                "unitShort": "oz",
+                "unitLong": "ounces"
+              },
+              "metric": {
+                "amount": 538.641,
+                "unitShort": "g",
+                "unitLong": "grams"
+              }
+            }
+          },
+          {
+            "id": 4053,
+            "aisle": "Oil, Vinegar, Salad Dressing",
+            "image": "olive-oil.jpg",
+            "consistency": "SOLID",
+            "name": "olive oil",
+            "nameClean": "olive oil",
+            "original": "1 tablespoon olive oil",
+            "originalName": "olive oil",
+            "amount": 1.0,
+            "unit": "tablespoon",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 1.0,
+                "unitShort": "Tbsp",
+                "unitLong": "Tbsp"
+              },
+              "metric": {
+                "amount": 1.0,
+                "unitShort": "Tbsp",
+                "unitLong": "Tbsp"
+              }
+            }
+          },
+          {
+            "id": 9152,
+            "aisle": "Produce",
+            "image": "lemon-juice.jpg",
+            "consistency": "LIQUID",
+            "name": "juice of lemon",
+            "nameClean": "lemon juice",
+            "original": "Juice of 1 lemon",
+            "originalName": "Juice of lemon",
+            "amount": 1.0,
+            "unit": "",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 1.0,
+                "unitShort": "",
+                "unitLong": ""
+              },
+              "metric": {
+                "amount": 1.0,
+                "unitShort": "",
+                "unitLong": ""
+              }
+            }
+          },
+          {
+            "id": 11215,
+            "aisle": "Produce",
+            "image": "garlic.png",
+            "consistency": "SOLID",
+            "name": "garlic",
+            "nameClean": "garlic",
+            "original": "2 large cloves garlic, crushed",
+            "originalName": "garlic, crushed",
+            "amount": 2.0,
+            "unit": "large cloves",
+            "meta": [
+              "crushed"
+            ],
+            "measures": {
+              "us": {
+                "amount": 2.0,
+                "unitShort": "large cloves",
+                "unitLong": "large cloves"
+              },
+              "metric": {
+                "amount": 2.0,
+                "unitShort": "large cloves",
+                "unitLong": "large cloves"
+              }
+            }
+          },
+          {
+            "id": 12698,
+            "aisle": "Health Foods",
+            "image": "tahini-paste.png",
+            "consistency": "SOLID",
+            "name": "tahini",
+            "nameClean": "tahini",
+            "original": "2 tablespoons tahini",
+            "originalName": "tahini",
+            "amount": 2.0,
+            "unit": "tablespoons",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 2.0,
+                "unitShort": "Tbsps",
+                "unitLong": "Tbsps"
+              },
+              "metric": {
+                "amount": 2.0,
+                "unitShort": "Tbsps",
+                "unitLong": "Tbsps"
+              }
+            }
+          },
+          {
+            "id": 14412,
+            "aisle": "Beverages",
+            "image": "water.png",
+            "consistency": "LIQUID",
+            "name": "water",
+            "nameClean": "water",
+            "original": "2 tablespoons water",
+            "originalName": "water",
+            "amount": 2.0,
+            "unit": "tablespoons",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 2.0,
+                "unitShort": "Tbsps",
+                "unitLong": "Tbsps"
+              },
+              "metric": {
+                "amount": 2.0,
+                "unitShort": "Tbsps",
+                "unitLong": "Tbsps"
+              }
+            }
+          },
+          {
+            "id": 1002014,
+            "aisle": "Spices and Seasonings",
+            "image": "ground-cumin.jpg",
+            "consistency": "SOLID",
+            "name": "cumin",
+            "nameClean": "cumin",
+            "original": "1 pinch cumin",
+            "originalName": "cumin",
+            "amount": 1.0,
+            "unit": "pinch",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 1.0,
+                "unitShort": "pinch",
+                "unitLong": "pinch"
+              },
+              "metric": {
+                "amount": 1.0,
+                "unitShort": "pinch",
+                "unitLong": "pinch"
+              }
+            }
+          },
+          {
+            "id": 2047,
+            "aisle": "Spices and Seasonings",
+            "image": "salt.jpg",
+            "consistency": "SOLID",
+            "name": "salt",
+            "nameClean": "table salt",
+            "original": "1 pinch salt",
+            "originalName": "salt",
+            "amount": 1.0,
+            "unit": "pinch",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 1.0,
+                "unitShort": "pinch",
+                "unitLong": "pinch"
+              },
+              "metric": {
+                "amount": 1.0,
+                "unitShort": "pinch",
+                "unitLong": "pinch"
+              }
+            }
+          }
+        ],
+        "id": 634389,
+        "title": "Basic Hummus",
+        "readyInMinutes": 45,
+        "servings": 20,
+        "sourceUrl": "https://www.foodista.com/recipe/6TTSCXV8/hummus",
+        "image": "https://img.spoonacular.com/recipes/634389-556x370.jpg",
+        "imageType": "jpg",
+        "summary": "Basic Hummus might be just the <b>middl eastern</b> recipe you are searching for. This hor d'oeuvre has <b>40 calories</b>, <b>2g of protein</b>, and <b>2g of fat</b> per serving. This recipe serves 20. For <b>10 cents per serving</b>, this recipe <b>covers 2%</b> of your daily requirements of vitamins and minerals. 4 people were glad they tried this recipe. It is a good option if you're following a <b>gluten free, dairy free, lacto ovo vegetarian, and vegan</b> diet. A mixture of cumin, salt, garlic, and a handful of other ingredients are all it takes to make this recipe so tasty. It is brought to you by Foodista. From preparation to the plate, this recipe takes approximately <b>45 minutes</b>. Taking all factors into account, this recipe <b>earns a spoonacular score of 44%</b>, which is pretty good. If you like this recipe, you might also like recipes such as <a href=\"https://spoonacular.com/recipes/basic-hummus-159032\">Basic Hummus</a>, <a href=\"https://spoonacular.com/recipes/best-basic-hummus-493263\">Best Basic Hummus</a>, and <a href=\"https://spoonacular.com/recipes/basic-hummus-1576693\">Basic Hummus</a>.",
+        "cuisines": [
+          "Middle Eastern"
+        ],
+        "dishTypes": [
+          "antipasti",
+          "condiment",
+          "starter",
+          "snack",
+          "appetizer",
+          "dip",
+          "antipasto",
+          "hor d'oeuvre",
+          "spread"
+        ],
+        "diets": [
+          "gluten free",
+          "dairy free",
+          "lacto ovo vegetarian",
+          "vegan"
+        ],
+        "occasions": [
+          
+        ],
+        "originalId": null,
+        "spoonacularScore": 48.19352722167969,
+        "spoonacularSourceUrl": "https://spoonacular.com/basic-hummus-634389"
+      },
+      {
+        "vegetarian": false,
+        "vegan": false,
+        "glutenFree": false,
+        "dairyFree": false,
+        "veryHealthy": false,
+        "cheap": false,
+        "veryPopular": false,
+        "sustainable": false,
+        "lowFodmap": false,
+        "weightWatcherSmartPoints": 15,
+        "gaps": "no",
+        "preparationMinutes": -1,
+        "cookingMinutes": -1,
+        "aggregateLikes": 11,
+        "healthScore": 1,
+        "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+        "license": "CC BY 3.0",
+        "sourceName": "Foodista",
+        "pricePerServing": 180.89,
+        "extendedIngredients": [
+          {
+            "id": 12155,
+            "aisle": "Baking",
+            "image": "walnuts.jpg",
+            "consistency": "SOLID",
+            "name": "walnuts",
+            "nameClean": "walnuts",
+            "original": "1 package (16 ounce) walnuts (4 cups)",
+            "originalName": "package walnuts (4 cups)",
+            "amount": 16.0,
+            "unit": "ounce",
+            "meta": [
+              "(4 cups)"
+            ],
+            "measures": {
+              "us": {
+                "amount": 16.0,
+                "unitShort": "oz",
+                "unitLong": "ounces"
+              },
+              "metric": {
+                "amount": 453.592,
+                "unitShort": "g",
+                "unitLong": "grams"
+              }
+            }
+          },
+          {
+            "id": 19335,
+            "aisle": "Baking",
+            "image": "sugar-in-bowl.png",
+            "consistency": "SOLID",
+            "name": "sugar",
+            "nameClean": "sugar",
+            "original": "1/2 cup sugar",
+            "originalName": "sugar",
+            "amount": 0.5,
+            "unit": "cup",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 0.5,
+                "unitShort": "cups",
+                "unitLong": "cups"
+              },
+              "metric": {
+                "amount": 100.0,
+                "unitShort": "g",
+                "unitLong": "grams"
+              }
+            }
+          },
+          {
+            "id": 1012010,
+            "aisle": "Spices and Seasonings",
+            "image": "cinnamon.jpg",
+            "consistency": "SOLID",
+            "name": "ground cinnamon",
+            "nameClean": "ground cinnamon",
+            "original": "1 teaspoon ground cinnamon",
+            "originalName": "ground cinnamon",
+            "amount": 1.0,
+            "unit": "teaspoon",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 1.0,
+                "unitShort": "tsp",
+                "unitLong": "teaspoon"
+              },
+              "metric": {
+                "amount": 1.0,
+                "unitShort": "tsp",
+                "unitLong": "teaspoon"
+              }
+            }
+          },
+          {
+            "id": 93817,
+            "aisle": "Refrigerated",
+            "image": "mini-phyllo-shells.png",
+            "consistency": "SOLID",
+            "name": "phyllo",
+            "nameClean": "mini filo shells",
+            "original": "1 package (16 ounce) frozen phyllo, thawed",
+            "originalName": "package frozen phyllo, thawed",
+            "amount": 16.0,
+            "unit": "ounce",
+            "meta": [
+              "frozen",
+              "thawed"
+            ],
+            "measures": {
+              "us": {
+                "amount": 16.0,
+                "unitShort": "oz",
+                "unitLong": "ounces"
+              },
+              "metric": {
+                "amount": 453.592,
+                "unitShort": "g",
+                "unitLong": "grams"
+              }
+            }
+          },
+          {
+            "id": 1001,
+            "aisle": "Milk, Eggs, Other Dairy",
+            "image": "butter-sliced.jpg",
+            "consistency": "SOLID",
+            "name": "butter",
+            "nameClean": "butter",
+            "original": "1 cup butter, melted",
+            "originalName": "butter, melted",
+            "amount": 1.0,
+            "unit": "cup",
+            "meta": [
+              "melted"
+            ],
+            "measures": {
+              "us": {
+                "amount": 1.0,
+                "unitShort": "cup",
+                "unitLong": "cup"
+              },
+              "metric": {
+                "amount": 227.0,
+                "unitShort": "g",
+                "unitLong": "grams"
+              }
+            }
+          },
+          {
+            "id": 19296,
+            "aisle": "Nut butters, Jams, and Honey",
+            "image": "honey.png",
+            "consistency": "LIQUID",
+            "name": "honey",
+            "nameClean": "honey",
+            "original": "1 jar (12 ounce) honey",
+            "originalName": "jar honey",
+            "amount": 12.0,
+            "unit": "ounce",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 12.0,
+                "unitShort": "oz",
+                "unitLong": "ounces"
+              },
+              "metric": {
+                "amount": 340.194,
+                "unitShort": "g",
+                "unitLong": "grams"
+              }
+            }
+          },
+          {
+            "id": 10123,
+            "aisle": "Meat",
+            "image": "raw-bacon.png",
+            "consistency": "SOLID",
+            "name": "bacon",
+            "nameClean": "applewood smoked bacon",
+            "original": "1 package (16 ounce) of bacon, fried crisp",
+            "originalName": "package of bacon, fried crisp",
+            "amount": 16.0,
+            "unit": "ounce",
+            "meta": [
+              "crisp"
+            ],
+            "measures": {
+              "us": {
+                "amount": 16.0,
+                "unitShort": "oz",
+                "unitLong": "ounces"
+              },
+              "metric": {
+                "amount": 453.592,
+                "unitShort": "g",
+                "unitLong": "grams"
+              }
+            }
+          }
+        ],
+        "id": 631783,
+        "title": "Honeyed Bacon\" Baklava",
+        "readyInMinutes": 45,
+        "servings": 24,
+        "sourceUrl": "https://www.foodista.com/recipe/GSKSTKGM/honeyed-bacon-baklava",
+        "image": "https://img.spoonacular.com/recipes/631783-556x370.jpg",
+        "imageType": "jpg",
+        "summary": "If you want to add more <b>middl eastern</b> recipes to your recipe box, Honeyed Bacon\" Baklava might be a recipe you should try. One serving contains <b>395 calories</b>, <b>8g of protein</b>, and <b>30g of fat</b>. This recipe serves 24 and costs $1.81 per serving. A mixture of walnuts, sugar, ground cinnamon, and a handful of other ingredients are all it takes to make this recipe so tasty. 11 person were glad they tried this recipe. From preparation to the plate, this recipe takes around <b>45 minutes</b>. It is brought to you by Foodista. With a spoonacular <b>score of 24%</b>, this dish is rather bad. Users who liked this recipe also liked <a href=\"https://spoonacular.com/recipes/bacon-baklava-393723\">Bacon Baklava</a>, <a href=\"https://spoonacular.com/recipes/honeyed-chicken-112370\">Honeyed Chicken</a>, and <a href=\"https://spoonacular.com/recipes/honeyed-olives-238515\">Honeyed Olives</a>.",
+        "cuisines": [
+          "Middle Eastern"
+        ],
+        "dishTypes": [
+          
+        ],
+        "diets": [
+          
+        ],
+        "occasions": [
+          
+        ],
+        "originalId": null,
+        "spoonacularScore": 29.045883178710938,
+        "spoonacularSourceUrl": "https://spoonacular.com/honeyed-bacon-baklava-631783"
+      },
+      {
+        "vegetarian": true,
+        "vegan": true,
+        "glutenFree": true,
+        "dairyFree": true,
+        "veryHealthy": false,
+        "cheap": false,
+        "veryPopular": false,
+        "sustainable": false,
+        "lowFodmap": false,
+        "weightWatcherSmartPoints": 6,
+        "gaps": "no",
+        "preparationMinutes": -1,
+        "cookingMinutes": -1,
+        "aggregateLikes": 2,
+        "healthScore": 6,
+        "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+        "license": "CC BY 3.0",
+        "sourceName": "Foodista",
+        "pricePerServing": 41.27,
+        "extendedIngredients": [
+          {
+            "id": 11080,
+            "aisle": "Produce",
+            "image": "beets.jpg",
+            "consistency": "SOLID",
+            "name": "roasted beets",
+            "nameClean": "red beet",
+            "original": "1 medium roasted red beets",
+            "originalName": "roasted red beets",
+            "amount": 1.0,
+            "unit": "medium",
+            "meta": [
+              "red"
+            ],
+            "measures": {
+              "us": {
+                "amount": 1.0,
+                "unitShort": "medium",
+                "unitLong": "medium"
+              },
+              "metric": {
+                "amount": 1.0,
+                "unitShort": "medium",
+                "unitLong": "medium"
+              }
+            }
+          },
+          {
+            "id": 16057,
+            "aisle": "Canned and Jarred",
+            "image": "chickpeas.png",
+            "consistency": "SOLID",
+            "name": "chickpeas",
+            "nameClean": "chickpeas",
+            "original": "1 cup cooked chickpeas",
+            "originalName": "cooked chickpeas",
+            "amount": 1.0,
+            "unit": "cup",
+            "meta": [
+              "cooked"
+            ],
+            "measures": {
+              "us": {
+                "amount": 1.0,
+                "unitShort": "cup",
+                "unitLong": "cup"
+              },
+              "metric": {
+                "amount": 164.0,
+                "unitShort": "g",
+                "unitLong": "grams"
+              }
+            }
+          },
+          {
+            "id": 11215,
+            "aisle": "Produce",
+            "image": "garlic.png",
+            "consistency": "SOLID",
+            "name": "garlic",
+            "nameClean": "garlic",
+            "original": "2 cloves garlic, minced",
+            "originalName": "garlic, minced",
+            "amount": 2.0,
+            "unit": "cloves",
+            "meta": [
+              "minced"
+            ],
+            "measures": {
+              "us": {
+                "amount": 2.0,
+                "unitShort": "cloves",
+                "unitLong": "cloves"
+              },
+              "metric": {
+                "amount": 2.0,
+                "unitShort": "cloves",
+                "unitLong": "cloves"
+              }
+            }
+          },
+          {
+            "id": 1012014,
+            "aisle": "Spices and Seasonings",
+            "image": "ground-cumin.jpg",
+            "consistency": "SOLID",
+            "name": "ground cumin",
+            "nameClean": "ground cumin",
+            "original": "1 teaspoon ground cumin",
+            "originalName": "ground cumin",
+            "amount": 1.0,
+            "unit": "teaspoon",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 1.0,
+                "unitShort": "tsp",
+                "unitLong": "teaspoon"
+              },
+              "metric": {
+                "amount": 1.0,
+                "unitShort": "tsp",
+                "unitLong": "teaspoon"
+              }
+            }
+          },
+          {
+            "id": 9152,
+            "aisle": "Produce",
+            "image": "lemon-juice.jpg",
+            "consistency": "LIQUID",
+            "name": "juice of lemon",
+            "nameClean": "lemon juice",
+            "original": "juice and zest of 1 lemon",
+            "originalName": "juice and zest of lemon",
+            "amount": 1.0,
+            "unit": "",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 1.0,
+                "unitShort": "",
+                "unitLong": ""
+              },
+              "metric": {
+                "amount": 1.0,
+                "unitShort": "",
+                "unitLong": ""
+              }
+            }
+          },
+          {
+            "id": 4053,
+            "aisle": "Oil, Vinegar, Salad Dressing",
+            "image": "olive-oil.jpg",
+            "consistency": "SOLID",
+            "name": "olive oil",
+            "nameClean": "olive oil",
+            "original": "Olive Oil",
+            "originalName": "Olive Oil",
+            "amount": 10.0,
+            "unit": "servings",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 10.0,
+                "unitShort": "servings",
+                "unitLong": "servings"
+              },
+              "metric": {
+                "amount": 10.0,
+                "unitShort": "servings",
+                "unitLong": "servings"
+              }
+            }
+          },
+          {
+            "id": 2047,
+            "aisle": "Spices and Seasonings",
+            "image": "salt.jpg",
+            "consistency": "SOLID",
+            "name": "salt",
+            "nameClean": "table salt",
+            "original": "Salt",
+            "originalName": "Salt",
+            "amount": 10.0,
+            "unit": "servings",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 10.0,
+                "unitShort": "servings",
+                "unitLong": "servings"
+              },
+              "metric": {
+                "amount": 10.0,
+                "unitShort": "servings",
+                "unitLong": "servings"
+              }
+            }
+          },
+          {
+            "id": 12698,
+            "aisle": "Health Foods",
+            "image": "tahini-paste.png",
+            "consistency": "SOLID",
+            "name": "tahini sesame seed paste",
+            "nameClean": "tahini",
+            "original": "1/4 cup tahini sesame seed paste",
+            "originalName": "tahini sesame seed paste",
+            "amount": 0.25,
+            "unit": "cup",
+            "meta": [
+              
+            ],
+            "measures": {
+              "us": {
+                "amount": 0.25,
+                "unitShort": "cups",
+                "unitLong": "cups"
+              },
+              "metric": {
+                "amount": 60.0,
+                "unitShort": "ml",
+                "unitLong": "milliliters"
+              }
+            }
+          }
+        ],
+        "id": 658503,
+        "title": "Roasted Beet Hummus",
+        "readyInMinutes": 45,
+        "servings": 10,
+        "sourceUrl": "http://www.foodista.com/recipe/8JHF7S2G/roasted-beet-hummus",
+        "image": "https://img.spoonacular.com/recipes/658503-556x370.jpg",
+        "imageType": "jpg",
+        "summary": "Roasted Beet Hummus requires roughly <b>45 minutes</b> from start to finish. This recipe serves 10. This hor d'oeuvre has <b>196 calories</b>, <b>3g of protein</b>, and <b>18g of fat</b> per serving. For <b>41 cents per serving</b>, this recipe <b>covers 5%</b> of your daily requirements of vitamins and minerals. This recipe is typical of middl eastern cuisine. It is a good option if you're following a <b>gluten free, dairy free, lacto ovo vegetarian, and vegan</b> diet. It is brought to you by Foodista. 2 people were glad they tried this recipe. Head to the store and pick up tahini sesame seed paste, juice of lemon, salt, and a few other things to make it today. Taking all factors into account, this recipe <b>earns a spoonacular score of 41%</b>, which is solid. Similar recipes include <a href=\"https://spoonacular.com/recipes/roasted-beet-hummus-480915\">Roasted Beet Hummus</a>, <a href=\"https://spoonacular.com/recipes/roasted-beet-hummus-510223\">Roasted Beet Hummus</a>, and <a href=\"https://spoonacular.com/recipes/roasted-beet-hummus-1281717\">Roasted Beet Hummus</a>.",
+        "cuisines": [
+          "Middle Eastern"
+        ],
+        "dishTypes": [
+          "antipasti",
+          "condiment",
+          "starter",
+          "snack",
+          "appetizer",
+          "dip",
+          "antipasto",
+          "hor d'oeuvre",
+          "spread"
+        ],
+        "diets": [
+          "gluten free",
+          "dairy free",
+          "lacto ovo vegetarian",
+          "vegan"
+        ],
+        "occasions": [
+          
+        ],
+        "originalId": null,
+        "spoonacularScore": 47.03325653076172,
+        "spoonacularSourceUrl": "https://spoonacular.com/roasted-beet-hummus-658503"
+      }
+    ]
+  }

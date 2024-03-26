@@ -15,6 +15,8 @@
     "require": {
         "dejurin/php-google-translate-for-free": "^1.0",
         "php-amqplib/php-amqplib": "^3.6",
-        "mpdf/mpdf": "^8.2"
+        "mpdf/mpdf": "^8.2",
+        "vlucas/phpdotenv": "^5.6",
+        "symfony/dotenv": "^6.4"
     }
 }
