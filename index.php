@@ -33,11 +33,27 @@ $callback = function ($msg) use($channel)
     $count = $json['count'];
     $telegram_id = $json['telegram_id'];
 
+    echo "Запрос на {$count} рецепт(ов) по {$country} и {$type} \n";
+
     $apiKey = $_ENV['API_KEY'];
 
     // получаем рандомные рецепты
     $response = file_get_contents("https://api.spoonacular.com/recipes/random?include-tags={$country},{$type}&apiKey={$apiKey}&number={$count}");
     $response = json_decode($response, true)['recipes'];
+
+    if(empty($response))
+    {
+        $msg_rres = new AMQPMessage(json_encode([
+            'message' => 'не удалось получить рецепты. Возможно, вы указали слишком экзотичные параметры или у нас закончились запросы. Приходите завтра!',
+            'telegram_id' => $telegram_id,
+            'status' => 'error'
+        ]));
+    
+        $channel->basic_publish($msg_rres, 'recept', 'rres');
+    
+        echo "Отправили ошибку :( \n";
+
+    }
 
     // $response = ['jsons/recipes6.json', 'jsons/recipes3.json'];
     $recipe_ids = implode(',', array_column($response, 'id'));
@@ -48,7 +64,7 @@ $callback = function ($msg) use($channel)
     $recipes = file_get_contents("https://api.spoonacular.com/recipes/informationBulk?ids={$recipe_ids}&includeNutrition=true&apiKey={$apiKey}");
     $recipes = json_decode($recipes, true);
 
-    echo "Было(и) получено(ы) {$count} рецепт(ов) по {$country} и {$type} \n";
+    echo "Было(и) получено(ы) рецепты от API \n";
 
     foreach($recipes as $item)
     {
@@ -87,7 +103,8 @@ $callback = function ($msg) use($channel)
 
     $msg_rres = new AMQPMessage(json_encode([
         'file' => '/lr4/' . $ftp_file,
-        'telegram_id' => $telegram_id
+        'telegram_id' => $telegram_id,
+        'status' => 'ok'
     ]));
 
     $channel->basic_publish($msg_rres, 'recept', 'rres');
