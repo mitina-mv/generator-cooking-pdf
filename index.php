@@ -2,40 +2,50 @@
 require_once ('vendor/autoload.php');
 
 use Mpdf\Mpdf;
+use PhpAmqpLib\Connection\AMQPStreamConnection;
+use PhpAmqpLib\Message\AMQPMessage;
 use Symfony\Component\Dotenv\Dotenv;
 
 $dotenv = new Dotenv();
 $dotenv->load(".env.local");
 
-// $connection = new AMQPStreamConnection('otisnth.ru', 5672, 'test', 'test');
-// $channel = $connection->channel();
+$connection = new AMQPStreamConnection(
+        $_ENV['RABBIT_HOST'], 
+        $_ENV['RABBIT_PORT'], 
+        $_ENV['RABBIT_USER'], 
+        $_ENV['RABBIT_PASSWORD']
+    );
+$channel = $connection->channel();
+$channel->exchange_declare('recept', 'direct', false, true, false);
 
-// $callback = function ($msg) 
-// {
-    // $json = json_decode($msg->body, true);
+$channel->queue_declare('receptResponse', false, true, false, false);
+$channel->queue_bind('receptResponse', 'recept', 'rres');
 
-    $json = [
-        'country' => 'Greek',
-        'type' => 'dessert',
-        'count' => 2,
-    ];
+$channel->queue_declare('receptRequest', false, true, false, false);
+$channel->queue_bind('receptRequest', 'recept', 'rreq');
+
+$callback = function ($msg) use($channel)
+{
+    $json = json_decode($msg->body, true);
 
     $country = $json['country'];
     $type = $json['type'];
     $count = $json['count'];
+    $telegram_id = $json['telegram_id'];
 
     $apiKey = $_ENV['API_KEY'];
 
-    $response = file_get_contents("https://api.spoonacular.com/recipes/random?include-tags={$country},{$type}&apiKey={$apiKey}&number={$count}");
-    // $response = file_get_contents('jsons/random.json');
-    $response = json_decode($response, true)['recipes'];
+    // $response = file_get_contents("https://api.spoonacular.com/recipes/random?include-tags={$country},{$type}&apiKey={$apiKey}&number={$count}");
+    // $response = json_decode($response, true)['recipes'];
+
+    $response = ['jsons/recipes6.json', 'jsons/recipes3.json'];
 
     $arRecipes = [];
 
     foreach($response as $item)
     {
-        $recipes = file_get_contents("https://api.spoonacular.com/recipes/{$item['id']}/information?includeNutrition=true&addTasteData=true&apiKey={$apiKey}");
-        // $recipes = file_get_contents($item);
+        // $recipes = file_get_contents("https://api.spoonacular.com/recipes/{$item['id']}/information?includeNutrition=true&addTasteData=true&apiKey={$apiKey}");
+        $recipes = file_get_contents($item);
         $recipes = json_decode($recipes, true);
 
         $arRecipes[] = getRecipes($recipes);
@@ -63,10 +73,6 @@ $dotenv->load(".env.local");
     $mpdf->Output($ftp_file, 'F');
 
     // сохранение PDF на FTP сервер
-    $ftp_server = $_ENV['FTP_HOST'];  
-    $ftp_user_name = $_ENV['FTP_USER']; 
-    $ftp_user_pass = $_ENV['FTP_PASSWORD']; 
-
     $ftp = new \FtpClient\FtpClient();
     $ftp->connect($_ENV['FTP_HOST']);
     $ftp->login($_ENV['FTP_USER'], $_ENV['FTP_PASSWORD']);
@@ -74,21 +80,24 @@ $dotenv->load(".env.local");
     $ftp->putFromPath($ftp_file);
 
     unlink($ftp_file);
-    
-    /* 
-    telegram_id
-    country
-    type
-    count
-    */
-    // echo ' [x] Received ', $msg->body, "\n";
-    // echo "ff";
-// };
-  
-// $channel->basic_consume('dick', '', false, true, false, false, $callback);
 
-// try {
-//     $channel->consume();
-// } catch (\Throwable $exception) {
-//     echo $exception->getMessage();
-// }
+    $msg_rres = new AMQPMessage(json_encode([
+        'file' => '/lr4/' . $ftp_file,
+        'telegram_id' => $telegram_id
+    ]));
+
+    $channel->basic_publish($msg_rres, 'receptResponse', 'rres');
+
+    $msg->ack();
+};
+  
+$channel->basic_consume('receptRequest', '', false, true, false, false, $callback);
+
+try {
+    $channel->consume();
+} catch (\Throwable $exception) {
+    echo $exception->getMessage();
+}
+
+$channel->close();
+$connection->close();
