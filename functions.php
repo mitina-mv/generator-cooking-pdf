@@ -3,8 +3,6 @@ use \Dejurin\GoogleTranslateForFree;
 
 function getRecipes($recipes)
 {
-    $result = [];
-
     $source = 'en';
     $target = 'ru';
     $attempts = 5;
@@ -15,7 +13,7 @@ function getRecipes($recipes)
     foreach($recipes['extendedIngredients'] as $ing)
     {
         $name = $tr->translate($source, $target, $ing['nameClean'], $attempts);
-        $measure = MEASURES[$ing['unit']] ?: $tr->translate($source, $target, $ing['unit'], $attempts);
+        $measure = isset(MEASURES[$ing['unit']]) ? MEASURES[$ing['unit']] : $tr->translate($source, $target, $ing['unit'], $attempts);
         $ingredients[] = "{$name} - {$ing['amount']} {$measure}";
     }
 
@@ -24,7 +22,7 @@ function getRecipes($recipes)
     foreach($recipes['nutrition']['nutrients'] as $nut)
     {
         $name = NUTRIENTS[$nut['name']];
-        $measure = MEASURES[$nut['unit']] ?: $nut['unit'];
+        $measure = isset(MEASURES[$nut['unit']]) ? MEASURES[$nut['unit']] : $nut['unit'];
 
         $nutrients[] = "<b>{$name}:</b> {$nut['amount']}{$measure} ({$nut['percentOfDailyNeeds']}%)*";
     }
@@ -38,8 +36,9 @@ function getRecipes($recipes)
         'nutrition' => $nutrients,
         'ingredients' => $ingredients,
         'minutes' => $recipes['readyInMinutes'],
-        'taste' => $recipes['taste']?:[],
-        'instructions' => $recipes['instructions'] ? $tr->translate($source, $target, $recipes['instructions'], $attempts) : 'Не указано',
+        'taste' => isset($recipes['taste'])? $recipes['taste'] : [],
+        'wine' => $recipes['winePairing']['pairingText'] ? $tr->translate($source, $target, $recipes['winePairing']['pairingText'], $attempts) : 'Это сильно здоровый рецепт :)',
+        'instructions' => isset($recipes['instructions']) ? $tr->translate($source, $target, $recipes['instructions'], $attempts) : 'Не указано',
     ];
 }
 
@@ -80,6 +79,9 @@ function getHtml($recipes)
 
     $html .= "<h3>Инструкция по приготовлению:</h3>";
     $html .= "<div>{$recipes['instructions']}</div>";
+
+    $html .= "<h3>Подходящие вина:</h3>";
+    $html .= "<div>{$recipes['wine']}</div>";
 
     if($recipes['nutrition'])
     {

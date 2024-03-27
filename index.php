@@ -35,20 +35,24 @@ $callback = function ($msg) use($channel)
 
     $apiKey = $_ENV['API_KEY'];
 
-    // $response = file_get_contents("https://api.spoonacular.com/recipes/random?include-tags={$country},{$type}&apiKey={$apiKey}&number={$count}");
-    // $response = json_decode($response, true)['recipes'];
+    // получаем рандомные рецепты
+    $response = file_get_contents("https://api.spoonacular.com/recipes/random?include-tags={$country},{$type}&apiKey={$apiKey}&number={$count}");
+    $response = json_decode($response, true)['recipes'];
 
-    $response = ['jsons/recipes6.json', 'jsons/recipes3.json'];
+    // $response = ['jsons/recipes6.json', 'jsons/recipes3.json'];
+    $recipe_ids = implode(',', array_column($response, 'id'));
 
     $arRecipes = [];
 
-    foreach($response as $item)
-    {
-        // $recipes = file_get_contents("https://api.spoonacular.com/recipes/{$item['id']}/information?includeNutrition=true&addTasteData=true&apiKey={$apiKey}");
-        $recipes = file_get_contents($item);
-        $recipes = json_decode($recipes, true);
+    // получаем полную информацию о рецептах
+    $recipes = file_get_contents("https://api.spoonacular.com/recipes/informationBulk?ids={$recipe_ids}&includeNutrition=true&apiKey={$apiKey}");
+    $recipes = json_decode($recipes, true);
 
-        $arRecipes[] = getRecipes($recipes);
+    echo "Было(и) получено(ы) {$count} рецепт(ов) по {$country} и {$type} \n";
+
+    foreach($recipes as $item)
+    {
+        $arRecipes[] = getRecipes($item);
     }
 
     // генерация пдф
@@ -67,7 +71,7 @@ $callback = function ($msg) use($channel)
     }
 
     $timeForFile = time();
-    $ftp_file = "filename_{$timeForFile}.pdf";
+    $ftp_file = "recipes_{$timeForFile}.pdf";
 
     // создание локального файл для сохранения
     $mpdf->Output($ftp_file, 'F');
@@ -86,9 +90,9 @@ $callback = function ($msg) use($channel)
         'telegram_id' => $telegram_id
     ]));
 
-    $channel->basic_publish($msg_rres, 'receptResponse', 'rres');
+    $channel->basic_publish($msg_rres, 'recept', 'rres');
 
-    $msg->ack();
+    echo "Отправили файл {$ftp_file} \n";
 };
   
 $channel->basic_consume('receptRequest', '', false, true, false, false, $callback);
